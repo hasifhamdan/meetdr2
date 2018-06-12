@@ -1,0 +1,15 @@
+<?php
+
+ include 'connect/dbconn.php';
+
+$sql = "UPDATE participant SET participant_status=1 WHERE meeting_id='?' AND doctor_id='?'";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
+}
+
+$conn->close();
+
+?>
